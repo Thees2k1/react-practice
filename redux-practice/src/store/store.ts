@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import counterReducer from "./counter/couterSlice";
+import counterReducer from "./slides/counterSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 
@@ -10,7 +10,6 @@ const persistConfig ={
 }
 
 const reducer = combineReducers({counter:counterReducer})
-
 const persitedReducer = persistReducer(persistConfig,reducer)
 
 export const store :any = configureStore({reducer:persitedReducer});

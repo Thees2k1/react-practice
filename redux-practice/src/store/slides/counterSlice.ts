@@ -37,7 +37,7 @@ const counterSlice = createSlice({
   },
 });
 
-export const incrementAsync = createAsyncThunk(
+export const incrementAsync : any = createAsyncThunk(
   "counter/incrementAsync",
   async (amount: number) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));

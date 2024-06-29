@@ -1,8 +1,8 @@
 
 import { useDispatch, useSelector } from "react-redux"
-import { AppDispatch, RootState } from "../state/store"
-import { decrement, increment, decrementByValue } from "../state/counter/couterSlice";
-import { incrementAsync } from "../state/counter/couterSlice";
+import { AppDispatch, RootState } from "../store/store"
+import { decrement, increment, decrementByValue } from "../store/slides/counterSlice";
+import { incrementAsync } from "../store/slides/counterSlice";
 
 
 const Counter = () => {
