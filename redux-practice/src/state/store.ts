@@ -1,7 +1,19 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import counterReducer from "./counter/couterSlice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
-export const store = configureStore({reducer:{counter: counterReducer}});
+const persistConfig ={
+    key:'root',
+    version:1,
+    storage
+}
+
+const reducer = combineReducers({counter:counterReducer})
+
+const persitedReducer = persistReducer(persistConfig,reducer)
+
+export const store :any = configureStore({reducer:persitedReducer});
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
